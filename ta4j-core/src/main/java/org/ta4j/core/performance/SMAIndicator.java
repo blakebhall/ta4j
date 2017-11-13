@@ -16,6 +16,9 @@ public class SMAIndicator extends AbstractIndicator<Decimal> {
     @Override
     public Decimal getValue(int index) {
         Decimal sum = Decimal.ZERO;
+        if (index == getTimeSeries().getCapacity()-1){
+            System.out.print("");
+        }
         for (int i = Math.max(0, index - timeFrame + 1); i <= index; i++) {
             sum = sum.plus(indicator.getValue(i));
         }

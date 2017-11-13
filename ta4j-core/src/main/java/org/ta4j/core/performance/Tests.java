@@ -36,7 +36,7 @@ public class Tests {
 
     public long testNewStructure(BarTimeSeries series, int upto){
         long start = System.currentTimeMillis();
-        Decimal average = smaCalculations(series,4);
+        Decimal average = smaCalculations(series,upto);
         long time = System.currentTimeMillis()-start;
         System.out.println(String.format("[Column based] time: %s lastValue: %s", time, average));
         return time;
